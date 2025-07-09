@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+html{
+  scroll-behavior: smooth;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+.navbar{
+  @apply flex justify-between px-5 py-5 fixed w-full items-center text-lg shadow-lg z-50 bg-white 
+}
+
+.navbar-list{
+  @apply space-x-4 hidden md:flex md:justify-end bg-red-500 
+}
+
+
+
+.icon {
+  @apply text-3xl
+}
+
+.logo{
+  @apply  h-15
+}
+
+.btnExplore{
+  @apply bg-blue-300 px-2 py-1 rounded-md border-1 border-black sm:hidden
+}
+
+.landing-container{
+  @apply relative w-full h-screen overflow-hidden flex justify-center items-center 
+}
+
+.landing-video{
+  @apply w-full absolute h-full object-cover z-[-1] top-0 left-0 items-center
+}
+
+.landing-content{
+  @apply z-10 text-center flex flex-col justify-baseline text-white relative mt-120
+}
+
+.category-wrapper{
+  @apply text-center py-10 flex flex-col h-full 
+}
+
+.category-content{
+@apply grid grid-cols-2 gap-5 px-5
+}
+
+.category-women{
+  @apply my-10 
+}
+
+.woment-collec-wrap{
+  @apply grid grid-cols-2 gap-5 px-5
+}
+
