@@ -2,9 +2,14 @@ import React from "react";
 import { IoMdMenu, IoIosArrowDown } from "react-icons/io";
 import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Navbar = (props) => {
   var btnExplore = "Explore";
+  const [openExplore, setOpenExplore] = useState(false);
+  function handleClick() {
+    
+  }
   return (
     <nav className="navbar ">
       <div>
@@ -19,20 +24,26 @@ const Navbar = (props) => {
           {props.home}
         </Link>
 
-        <Link to="/about-me" className="nav-items">{props.about}</Link>
-        
-        <li>{props.testimonials}</li>
-        <li>{props.contact}</li>
-        <li className="flex items-center">
+        <Link to="/about-me" className="nav-items">
+          {props.about}
+        </Link>
+
+        <Link to="/testimonials" className="nav-items">
+          {props.testimonials}
+        </Link>
+        <Link to="/contact" className="nav-items">
+          {props.contact}
+        </Link>
+        <Link className="flex items-center">
           {props.collection}
           <span>
             {" "}
             <IoIosArrowDown />
           </span>
-        </li>
+        </Link>
       </ul>
       <div className="items-center text-lg">
-        <a href="/">Explore</a>
+        <button onClick={handleClick}>{btnExplore}</button>
       </div>
     </nav>
   );

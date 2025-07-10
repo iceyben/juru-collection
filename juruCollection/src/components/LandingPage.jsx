@@ -1,4 +1,5 @@
 import React from "react";
+
 import video from "../assets/landingVideo.mp4";
 
 const LandingPage = () => {
@@ -13,8 +14,8 @@ const LandingPage = () => {
           Welcome to {storeName}
         </h1>
         <p>Kigali, Rwanda</p>
-        <button className="bg-gray-300 py-2 rounded-lg font-bold text-black mt-4 text-lg">
-          Get Started
+        <button className="btn bg-gray-300 py-2 rounded-lg font-bold text-black mt-4 text-lg">
+          Explore Products
         </button>
       </div>
     </div>

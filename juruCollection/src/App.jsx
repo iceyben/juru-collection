@@ -1,8 +1,11 @@
 import "./App.css";
 import MainPage from "./MainPage";
-import { Route, Routes, Link } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import AboutMe from "./AboutMe";
 import Header from "./Header";
+import Testimonials from "./components/Testimonials";
+import Contact from "./components/Contact";
+
 
 function App() {
   return (
@@ -11,7 +14,11 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/about-me" element={<AboutMe />} />
+        <Route path="/testimonials" element={<Testimonials />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/explore" />
       </Routes>
+      
     </>
   );
 }

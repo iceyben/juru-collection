@@ -8,13 +8,27 @@ html{
   box-sizing: border-box;
 }
 
+.btn:hover{
+  background-color: transparent;
+  color: white;
+  border: solid white 2px;
+}
+
 .navbar{
   @apply flex justify-between px-5 py-5 fixed w-full items-center text-lg shadow-lg z-50 bg-white 
 }
 
 .navbar-list{
-  @apply space-x-4 hidden md:flex md:justify-end bg-red-500 
+  @apply space-x-7 hidden md:flex md:justify-end 
 }
+.nav-items:hover{
+  color: gray;
+  text-decoration: underline;
+  font-size: 15px;
+  transition: ease-out .5s;
+}
+
+
 
 
 
@@ -58,3 +72,36 @@ html{
   @apply grid grid-cols-2 gap-5 px-5
 }
 
+.pages{
+  @apply  pt-30 
+}
+
+.display-image{
+  @apply w-full sticky h-full bg-no-repeat
+}
+
+
+.customer-review{
+  @apply shadow-xl shadow-gray-300 px-2 py-2 flex flex-col mb-10 text-center items-center rounded-sm 
+}
+
+.customer-review:hover{
+  background-color: navy;
+  color: white;
+}
+
+.contact-wrapper{
+  @apply bg-blue-950 p-5 sm:p-20 space-x-5 text-white sm:grid sm:grid-cols-2
+}
+
+.my-form{
+  @apply flex flex-col  shadow-lg shadow-blue-900 py-5 px-4 w-full rounded-lg
+}
+
+.btnSubmit{
+  @apply py-3 mx-20 rounded-sm shadow-lg shadow-blue-900 mt-5
+}
+
+.form-title{
+  @apply pb-4 text-2xl uppercase font-bold text-center
+}

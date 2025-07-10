@@ -12,7 +12,9 @@ const MenCategory = () => {
         <Cards cardName="Men's Slippers" cardImg={menSuits} className="" />
         <Cards cardName="Men's Sandals" cardImg={menSuits} className="" />
       </div>
-      <img src={img} alt="" className="object-cover mt-10" />
+     <div className="">
+       <img src={img} alt="" className="display-image object-cover mt-10" />
+     </div>
     </div>
   );
 };

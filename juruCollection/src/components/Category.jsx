@@ -13,7 +13,6 @@ const Category = () => {
         <h2 className="Category-title">{categoryTitle}</h2>
       <MenCategory />
       <WomentCategory />
-      
       </div>
     </div>
   );

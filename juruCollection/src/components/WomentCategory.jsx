@@ -5,7 +5,15 @@ import Cards from "./Cards";
 const WomentCategory = () => {
   var categoryWomen = "Women";
   return (
-    <div className="">
+    <div className="z-10">
+      <h2 className="category-women">{categoryWomen}</h2>
+      <div className="woment-collec-wrap">
+        <Cards cardName="Men's Suits" cardImg={womentSuits} className="" />
+        <Cards cardName="Men's Suits" cardImg={womentSuits} className="" />
+      </div>
+      <div className="">
+        <img src={womentSuits} alt="" className="display-image my-10 " />
+      </div>
       <h2 className="category-women">{categoryWomen}</h2>
       <div className="woment-collec-wrap">
         <Cards cardName="Men's Suits" cardImg={womentSuits} className="" />
