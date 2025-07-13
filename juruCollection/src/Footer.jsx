@@ -1,11 +1,12 @@
 import React from 'react'
 import FormIcon from './components/formIcon'
+import LocationMap from './components/LocationMap'
 
 const Footer = () => {
   return (
-    <div className='p-5' >
-        <FormIcon/>
-        <h1 className='text-sm text-center'>&copy;Copy Right reserved by Juru Collection</h1>
+    <div className='' >
+        <LocationMap/>
+        <h1 className='text-sm text-center mt-15'>&copy;Copy Right reserved by Juru Collection</h1>
     </div>
   )
 }

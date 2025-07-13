@@ -1,51 +1,154 @@
-import React from "react";
-import { IoMdMenu, IoIosArrowDown } from "react-icons/io";
+import React, { useState, useEffect, useRef } from "react";
+import { IoMdMenu, IoMdClose, IoIosArrowDown } from "react-icons/io";
 import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Navbar = (props) => {
+  const logoText = "Juru Collection.";
   var btnExplore = "Explore";
-  const [openExplore, setOpenExplore] = useState(false);
-  function handleClick() {
-    
-  }
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef(null); // 🆕 Added
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: false,
+    });
+
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    };
+
+    const handleScroll = () => {
+      setMenuOpen(false);
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="navbar ">
-      <div>
-        <IoMdMenu className="icon" />
-      </div>
-      <div>
-        <img src={logo} alt="Logo" className="logo" />
-      </div>
-
-      <ul className="navbar-list">
-        <Link to="/" className="nav-items">
-          {props.home}
-        </Link>
-
-        <Link to="/about-me" className="nav-items">
-          {props.about}
-        </Link>
-
-        <Link to="/testimonials" className="nav-items">
-          {props.testimonials}
-        </Link>
-        <Link to="/contact" className="nav-items">
-          {props.contact}
-        </Link>
-        <Link className="flex items-center">
-          {props.collection}
-          <span>
+    <div className="relative">
+      <nav className="navbar">
+        <div className="flex justify-center items-center space-x-3">
+          <Link to="/">
             {" "}
-            <IoIosArrowDown />
-          </span>
-        </Link>
-      </ul>
-      <div className="items-center text-lg">
-        <button onClick={handleClick}>{btnExplore}</button>
-      </div>
-    </nav>
+            <img src={logo} alt="Logo" className="logo" />
+          </Link>
+          <div>
+          <h1 className="text-lg sm:text-xl lg:text-2xl uppercase font-bold ">
+            {logoText}
+          </h1>
+        </div>
+        </div>
+        
+
+        <div onClick={toggleMenu} className="md:hidden">
+          {menuOpen ? (
+            <IoMdClose className="icon" />
+          ) : (
+            <IoMdMenu className="icon" />
+          )}
+        </div>
+
+        <ul className="navbar-lists">
+          <Link to="/" className="nav-items">
+            {props.home}
+          </Link>
+
+          <Link to="/about-me" className="nav-items">
+            {props.about}
+          </Link>
+
+          <Link to="/testimonials" className="nav-items">
+            {props.testimonials}
+          </Link>
+          <Link to="/contact" className="nav-items">
+            {props.contact}
+          </Link>
+          <Link className="flex items-center">
+            {props.collection}
+            <span>
+              {" "}
+              <IoIosArrowDown />
+            </span>
+          </Link>
+        </ul>
+
+        {/** <div className="items-center text-lg">
+          <Link to="/explore">
+            <li className=" list-none ">{btnExplore}</li>
+          </Link>
+        </div> */}
+      </nav>
+
+      {menuOpen && (
+        <div className="mobile-menu " ref={menuRef}>
+          <ul className="navbar-list">
+            <Link
+              data-aos="fade-down"
+              data-aos-duration="1000"
+              to="/"
+              className="nav-items menu-list"
+            >
+              {props.home}
+            </Link>
+
+            <Link
+              data-aos="fade-down"
+              data-aos-duration="1000"
+              to="/about-me"
+              className="nav-items menu-list"
+            >
+              {props.about}
+            </Link>
+
+            <Link
+              data-aos="fade-down"
+              data-aos-duration="1000"
+              to="/testimonials"
+              className="nav-items menu-list"
+            >
+              {props.testimonials}
+            </Link>
+
+            <Link
+              data-aos="fade-down"
+              data-aos-duration="1000"
+              to="/contact"
+              className="nav-items menu-list"
+            >
+              {props.contact}
+            </Link>
+
+            <Link
+              data-aos="fade-down"
+              data-aos-duration="1000"
+              className="flex items-center"
+            >
+              {props.collection}
+              <span>
+                {" "}
+                <IoIosArrowDown />
+              </span>
+            </Link>
+          </ul>
+        </div>
+      )}
+    </div>
   );
 };
 

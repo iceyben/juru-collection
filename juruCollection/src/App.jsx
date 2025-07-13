@@ -4,8 +4,10 @@ import { Route, Routes } from "react-router-dom";
 import AboutMe from "./AboutMe";
 import Header from "./Header";
 import Testimonials from "./components/Testimonials";
-import Contact from "./components/Contact";
-
+import Product from "./components/Product";
+import ProductMen from "./components/ProductMen";
+import ProductWomen from "./components/ProductWomen";
+import ContactPage from "./components/ContactPage";
 
 function App() {
   return (
@@ -15,10 +17,21 @@ function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="/about-me" element={<AboutMe />} />
         <Route path="/testimonials" element={<Testimonials />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/explore" />
+        <Route path="/contact" element={<ContactPage/>} />
+        <Route path="/explore" element={<Product />}>
+          <Route
+            index
+            element={
+              <>
+                <ProductMen />
+                <ProductWomen />
+              </>
+            }
+          />
+          <Route path="men" element={<ProductMen />} />
+          <Route path="women" element={<ProductWomen />} />
+        </Route>
       </Routes>
-      
     </>
   );
 }

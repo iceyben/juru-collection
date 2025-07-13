@@ -13,32 +13,49 @@ const MyForm = () => {
     setEmail(event.target.value);
   }
 
-  function handleTextFieldChange(event){
+  function handleTextFieldChange(event) {
     setTextField(event.target.value);
   }
 
-  function handleSubmit(){
-    const handleSubmit = (event) => {
-        event.preventDefault(); // Prevent default form submission
-        console.log('Form submitted:', { name, email });
-        // You can send this data to an API, perform validation
-      };
-  }
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Prevent default form submission
+    console.log("Form submitted:", { fullName, email, textfield });
+    handleNameChange();
+    handleEmailChange();
+    handleTextFieldChange();
+
+    // You can send this data to an API, perform validation
+  };
 
   return (
     <form className="my-form" onSubmit={handleSubmit}>
-        <h1 className="form-title">Get In Touch</h1>
+      <h1 className="form-title">Get In Touch</h1>
       <label>
-        <h3>Name:</h3>
-        <input type="text" value={fullName} onClick={handleNameChange} className="w-full border-b-1 mb-3 py-2" />
+        <h3 className="font-bold">Name:</h3>
+        <input
+          type="text"
+          value={fullName}
+          onChange={handleNameChange}
+          className="inputStyle"
+        />
       </label>
       <label>
-        <h3>Email:</h3>
-        <input type="email" value={email} onClick={handleEmailChange} className="w-full border-b-1 mb-3 py-2" />
+        <h3 className="font-bold">Email:</h3>
+        <input
+          type="email"
+          value={email}
+          onChange={handleEmailChange}
+          className="inputStyle"
+        />
       </label>
       <label>
-        <h3>Message</h3>
-        <input type="textfield" value={textfield} onClick={handleTextFieldChange} className="w-full border-b-1 mb-3 py-2" />
+        <h3 className="font-bold">Message</h3>
+        <input
+          type="text"
+          value={textfield}
+          onChange={handleTextFieldChange}
+          className="inputStyle"
+        />
       </label>
       <button className="btnSubmit" type="submit">
         Send Message

@@ -15,10 +15,10 @@ html{
 }
 
 .navbar{
-  @apply flex justify-between px-5 py-5 fixed w-full items-center text-lg shadow-lg z-50 bg-white 
+  @apply flex justify-between px-5 py-5 fixed w-full items-center text-lg shadow-lg z-20 bg-white 
 }
 
-.navbar-list{
+.navbar-lists{
   @apply space-x-7 hidden md:flex md:justify-end 
 }
 .nav-items:hover{
@@ -28,12 +28,8 @@ html{
   transition: ease-out .5s;
 }
 
-
-
-
-
 .icon {
-  @apply text-3xl
+  @apply text-3xl 
 }
 
 .logo{
@@ -60,13 +56,50 @@ html{
   @apply text-center py-10 flex flex-col h-full 
 }
 
+.Category-title{
+  @apply font-bold uppercase text-lg underline decoration-blue-600 decoration-3 pb-4
+}
+
 .category-content{
-@apply grid grid-cols-2 gap-5 px-5
+@apply grid grid-cols-2 sm:grid sm:grid-cols-3 lg:grid lg:grid-cols-4 gap-5 px-5 lg:px-10
 }
 
 .category-women{
-  @apply my-10 
+  @apply my-10  
 }
+
+
+
+.card {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3); /* blue-300 shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: white;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 30px rgba(59, 130, 246, 0.5); /* deeper blue glow */
+}
+.card-image {
+  width: 100%;
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-image {
+  transform: scale(1.05);
+}
+
+.card-title {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.875rem; /* Tailwind’s text-sm */
+  padding-top: 0.5rem;
+}
+
 
 .woment-collec-wrap{
   @apply grid grid-cols-2 gap-5 px-5
@@ -77,21 +110,23 @@ html{
 }
 
 .display-image{
-  @apply w-full sticky h-full bg-no-repeat
+  @apply w-full h-full object-cover lg:h-150 lg:object-top
 }
 
 
 .customer-review{
-  @apply shadow-xl shadow-gray-300 px-2 py-2 flex flex-col mb-10 text-center items-center rounded-sm 
+  @apply shadow-xl shadow-blue-300 px-2 py-2 flex flex-col mb-10 text-center items-center rounded-xl pt-4
 }
 
 .customer-review:hover{
-  background-color: navy;
+  background-color: #93c5fd;
   color: white;
 }
 
+
+
 .contact-wrapper{
-  @apply bg-blue-950 p-5 sm:p-20 space-x-5 text-white sm:grid sm:grid-cols-2
+  @apply bg-blue-950 py-5 px-6 md:p-20 md:space-x-5 text-white md:grid md:grid-cols-2
 }
 
 .my-form{
@@ -105,3 +140,33 @@ html{
 .form-title{
   @apply pb-4 text-2xl uppercase font-bold text-center
 }
+
+.inputStyle{
+  @apply w-full border-b-1 mb-3 py-2 px-3 text-white 
+
+}
+
+.navbar-list{
+  @apply flex flex-col z-15 w-full absolute top-25 p-4 shadow-sm  bg-white
+}
+
+.menu-list{
+  @apply py-3
+}
+
+.productCard-container{
+  @apply relative  m-2 rounded-lg bg-white text-black shadow-xl shadow-blue-200
+}
+.product-nav{
+  @apply flex space-x-4 ml-4 mt-4 font-bold 
+}
+
+.btnPurchase{
+  @apply justify-center bg-blue-500 py-1 text-white shadow-lg  text-center m-auto px-15 mb-5 rounded-lg items-center 
+}
+
+.btnPurchase:hover{
+  background-color: blue;
+}
+
+
