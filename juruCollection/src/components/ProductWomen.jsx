@@ -4,7 +4,7 @@ import p2 from "../assets/p2d.jpeg";
 
 const ProductWomen = () => {
   return (
-    <div className="sm:grid sm:grid-cols-2">
+    <div className="products ">
       <ProductCard image={p2} name="Women African Print Dress" />
       <ProductCard image={p2} name="Women African Print Dress" />
       <ProductCard image={p2} name="Women African Print Dress" />

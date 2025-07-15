@@ -18,12 +18,12 @@ const ProductCard = (props) => {
 
       <div className="flex flex-col">
         <span className="flex justify-between px-4 py-2">
-          <h3>{props.name}</h3>
+          <h3 className="text-[10px] sm:text-[14px]">{props.name}</h3>
           <span className="flex space-x-1">
-            <IoStar className="text-[14px] text-yellow-400" />
-            <IoStar className="text-[14px] text-yellow-400" />
-            <IoStar className="text-[14px] text-yellow-400" />
-            <IoStar className="text-[14px] text-yellow-400" />
+            <IoStar className="text-[10px] sm:text-[14px] text-yellow-400" />
+            <IoStar className="text-[10px] sm:text-[14px] text-yellow-400" />
+            <IoStar className="text-[10px] sm:text-[14px] text-yellow-400" />
+            <IoStar className="text-[10px] sm:text-[14px] text-yellow-400" />
           </span>
         </span>
         <button className="btnPurchase ">

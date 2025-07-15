@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const MainPage = () => {
   return (
-    <div className="">
+    <div className="overflow-hidden">
       <LandingPage />
       <Category />
       <div className="">

@@ -4,9 +4,10 @@ import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import CollectionDropdown from "./CollectionDropdown";
 
 const Navbar = (props) => {
-  const logoText = "Juru Collection.";
+  const logoText = "Juru Collection";
   var btnExplore = "Explore";
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null); // 🆕 Added
@@ -49,12 +50,11 @@ const Navbar = (props) => {
             <img src={logo} alt="Logo" className="logo" />
           </Link>
           <div>
-          <h1 className="text-lg sm:text-xl lg:text-2xl uppercase font-bold ">
-            {logoText}
-          </h1>
+            <h1 className="text-lg sm:text-xl lg:text-2xl uppercase font-bold ">
+              {logoText}
+            </h1>
+          </div>
         </div>
-        </div>
-        
 
         <div onClick={toggleMenu} className="md:hidden">
           {menuOpen ? (
@@ -79,13 +79,7 @@ const Navbar = (props) => {
           <Link to="/contact" className="nav-items">
             {props.contact}
           </Link>
-          <Link className="flex items-center">
-            {props.collection}
-            <span>
-              {" "}
-              <IoIosArrowDown />
-            </span>
-          </Link>
+          <CollectionDropdown title={props.collection} />
         </ul>
 
         {/** <div className="items-center text-lg">
@@ -134,17 +128,12 @@ const Navbar = (props) => {
               {props.contact}
             </Link>
 
-            <Link
+            <CollectionDropdown
               data-aos="fade-down"
               data-aos-duration="1000"
               className="flex items-center"
-            >
-              {props.collection}
-              <span>
-                {" "}
-                <IoIosArrowDown />
-              </span>
-            </Link>
+              title={props.collection}
+            />
           </ul>
         </div>
       )}

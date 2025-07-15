@@ -9,14 +9,18 @@ const WomentCategory = () => {
       <h2 className="category-women">{categoryWomen}</h2>
 
       <div className="category-content ">
-        <Cards cardName="Men's Suits" cardImg={womentSuits} className="" />{" "}
-        <Cards cardName="Men's Suits" cardImg={womentSuits} className="" />
-        <Cards cardName="Men's Suits" cardImg={womentSuits} className="" />
-        <Cards cardName="Men's Suits" cardImg={womentSuits} className="" />
-         <Cards cardName="Men's Suits" cardImg={womentSuits} className="" />{" "}
-        <Cards cardName="Men's Suits" cardImg={womentSuits} className="" />
-        <Cards cardName="Men's Suits" cardImg={womentSuits} className="" />
-        <Cards cardName="Men's Suits" cardImg={womentSuits} className="" />
+        <Cards cardName="Women's Suits" cardImg={womentSuits} className="" />{" "}
+        <Cards cardName="Women's Suits" cardImg={womentSuits} className="" />
+        <Cards cardName="Women's Suits" cardImg={womentSuits} className="" />
+        <Cards cardName="Women's Suits" cardImg={womentSuits} className="" />
+        <Cards
+          cardName="Women's Suits"
+          cardImg={womentSuits}
+          className=""
+        />{" "}
+        <Cards cardName="Women's Suits" cardImg={womentSuits} className="" />
+        <Cards cardName="Women's Suits" cardImg={womentSuits} className="" />
+        <Cards cardName="Women's Suits" cardImg={womentSuits} className="" />
       </div>
 
       <div className="">
