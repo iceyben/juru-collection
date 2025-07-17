@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 
 const CollectionDropdown = ({ title = "Collections" }) => {
   const items = [
-    { label: "Men's Suits", link: "/collections/men" },
-    { label: "Men's Slippers", link: "/collections/men" },
-    { label: "Men's Sandals", link: "/collections/men" },
-    { label: "Men's Shirt", link: "/collections/men" },
-    { label: "Women's Suit", link: "/collections/women" },
-    { label: "Women's Slippers", link: "/collections/women" },
-    { label: "Women's Sandals", link: "/collections/women" },
-    { label: "Women's Shirt", link: "/collections/women" },
+    { label: "Men's Suits", link: "/explore/men" },
+    { label: "Men's Slippers", link: "/explore/men" },
+    { label: "Men's Sandals", link: "/explore/men" },
+    { label: "Men's Shirt", link: "/explore/men" },
+    { label: "Women's Suit", link: "/explore/women" },
+    { label: "Women's Slippers", link: "/explore/women" },
+    { label: "Women's Sandals", link: "/explore/women" },
+    { label: "Women's Shirt", link: "/explore/women" },
   ];
 
   return (

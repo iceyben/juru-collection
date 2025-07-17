@@ -8,6 +8,8 @@ import Product from "./components/Product";
 import ProductMen from "./components/ProductMen";
 import ProductWomen from "./components/ProductWomen";
 import ContactPage from "./components/ContactPage";
+import ProductDetail from "./components/ProductDetail";
+// import ProductPage from "./components/ProductPage";
 
 function App() {
   return (
@@ -31,6 +33,7 @@ function App() {
           <Route path="men" element={<ProductMen />} />
           <Route path="women" element={<ProductWomen />} />
         </Route>
+        <Route path="/product-details/:id" element={<ProductDetail />} />
       </Routes>
     </>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import MyForm from "./MyForm";
-import FormIcon from "./formIcon";
+import FormIcon from "./FormIcon";
 import { FaPhoneSquare } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
