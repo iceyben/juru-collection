@@ -1,6 +1,5 @@
 import React from "react";
 import ProductCard from "./ProductCard";
-import { Link } from "react-router-dom";
 import p1 from "../assets/p1.jpeg";
 
 const ProductMen = () => {
@@ -8,7 +7,7 @@ const ProductMen = () => {
     {
       id: 5,
       image: p1,
-      name: "Men African Print Shirt",
+      name: "African Shirt",
       price: "50",
       description: "Stylish and unique for any occasion.",
     },
@@ -38,9 +37,14 @@ const ProductMen = () => {
   return (
     <div className="products">
       {products.map((product) => (
-        <Link key={product.id} to={`/product-details/${product.id}`}>
-          <ProductCard image={product.image} name={product.name} />
-        </Link>
+        <ProductCard
+          key={product.id}
+          id={product.id}
+          image={product.image}
+          name={product.name}
+          price={product.price}
+          description={product.description}
+        />
       ))}
     </div>
   );

@@ -39,7 +39,12 @@ const ProductWomen = () => {
     <div className="products">
       {products.map((product) => (
         <Link key={product.id} to={`/product-details/${product.id}`}>
-          <ProductCard image={product.image} name={product.name} />
+          <ProductCard
+            image={product.image}
+            name={product.name}
+            price={product.price}
+            description={product.description}
+          />
         </Link>
       ))}
     </div>

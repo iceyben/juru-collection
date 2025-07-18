@@ -1,6 +1,7 @@
 import React from "react";
 import womentSuits from "../assets/p2d.jpeg";
 import Cards from "./Cards";
+import { Link } from "react-router-dom";
 
 const WomentCategory = () => {
   var categoryWomen = "Women";
@@ -9,18 +10,41 @@ const WomentCategory = () => {
       <h2 className="category-women">{categoryWomen}</h2>
 
       <div className="category-content ">
-        <Cards cardName="Women's Suits" cardImg={womentSuits} className="" />{" "}
-        <Cards cardName="Women's Suits" cardImg={womentSuits} className="" />
-        <Cards cardName="Women's Suits" cardImg={womentSuits} className="" />
-        <Cards cardName="Women's Suits" cardImg={womentSuits} className="" />
-        <Cards
-          cardName="Women's Suits"
-          cardImg={womentSuits}
-          className=""
-        />{" "}
-        <Cards cardName="Women's Suits" cardImg={womentSuits} className="" />
-        <Cards cardName="Women's Suits" cardImg={womentSuits} className="" />
-        <Cards cardName="Women's Suits" cardImg={womentSuits} className="" />
+        <Link to="/explore/women">
+          <Cards cardName="Women's Suits" cardImg={womentSuits} className="" />{" "}
+        </Link>
+        <Link to="/explore/women">
+          <Cards cardName="Women's Suits" cardImg={womentSuits} className="" />
+        </Link>
+        <Link to="/explore/women">
+          <Cards cardName="Women's Suits" cardImg={womentSuits} className="" />
+        </Link>
+        <Link to="/explore/women">
+          {" "}
+          <Cards cardName="Women's Suits" cardImg={womentSuits} className="" />
+        </Link>
+        <Link to="/explore/women">
+          {" "}
+          <Cards cardName="Women's Suits" cardImg={womentSuits} className="" />
+        </Link>
+        <Link to="/explore/women">
+          {" "}
+          <Cards
+            cardName="Women's Suits"
+            cardImg={womentSuits}
+            className=""
+          />{" "}
+        </Link>
+        <Link to="/explore/women">
+          {" "}
+          <Cards cardName="Women's Suits" cardImg={womentSuits} className="" />
+        </Link>
+        <Link to="/explore/women">
+          <Cards cardName="Women's Suits" cardImg={womentSuits} className="" />
+        </Link>
+        <Link to="/explore/women">
+          <Cards cardName="Women's Suits" cardImg={womentSuits} className="" />
+        </Link>
       </div>
 
       <div className="">

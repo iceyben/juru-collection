@@ -3,12 +3,12 @@ import MenCategory from "./MenCategory";
 import WomentCategory from "./WomentCategory";
 
 const Category = () => {
-  var categoryTitle = "Collection";
+ 
 
   return (
     <div className="category-wrapper">
       <div className="">
-        <h2 className="Category-title">{categoryTitle}</h2>
+       
         <MenCategory />
         <WomentCategory />
       </div>
