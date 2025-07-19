@@ -90,7 +90,7 @@ const Navbar = (props) => {
       </nav>
 
       {menuOpen && (
-        <div className="mobile-menu " ref={menuRef}>
+        <div className="mobile-menu z-20" ref={menuRef}>
           <ul className="navbar-list">
             <Link
               data-aos="fade-down"

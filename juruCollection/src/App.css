@@ -15,7 +15,7 @@ html{
 }
 
 .navbar{
-  @apply flex justify-between px-5 py-5 fixed w-full items-center text-lg shadow-lg z-20 bg-white
+  @apply flex justify-between px-5 py-5 fixed w-full items-center text-lg shadow-lg z-50 bg-white
 }
 
 .navbar-lists{
@@ -147,7 +147,7 @@ html{
 }
 
 .navbar-list{
-  @apply flex flex-col z-15 w-full absolute top-25 p-4 shadow-sm  bg-white
+  @apply  flex flex-col z-30 w-full  fixed top-0 left-0  bg-white px-4 pt-25 pb-4 shadow-sm 
 }
 
 .menu-list{
@@ -175,7 +175,7 @@ html{
 
 .dropdown-list {
   position: absolute;
-  top: 100%;
+  top:100%;
   right: 0;
   padding-top: 1.25rem;  /* py-5 */
   padding-bottom: 1.25rem;
@@ -187,11 +187,15 @@ html{
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease;
-  z-index: 50;
+  z-index:50;
 }
 
 .dropdown-container:hover .dropdown-list {
   opacity: 1;
   visibility: visible;
+}
+
+.about:hover{
+  background-color: rgb(242, 242, 242);
 }
 

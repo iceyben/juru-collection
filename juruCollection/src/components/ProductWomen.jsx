@@ -1,7 +1,6 @@
 import React from "react";
 import ProductCard from "./ProductCard";
 import p2 from "../assets/p2d.jpeg";
-import { Link } from "react-router-dom";
 
 const ProductWomen = () => {
   const products = [
@@ -38,14 +37,13 @@ const ProductWomen = () => {
   return (
     <div className="products">
       {products.map((product) => (
-        <Link key={product.id} to={`/product-details/${product.id}`}>
-          <ProductCard
-            image={product.image}
-            name={product.name}
-            price={product.price}
-            description={product.description}
-          />
-        </Link>
+        <ProductCard
+          id={product.id} // ✅ ADD THIS LINE
+          image={product.image}
+          name={product.name}
+          price={product.price}
+          description={product.description}
+        />
       ))}
     </div>
   );

@@ -39,7 +39,7 @@ const AboutMe = () => {
       </div>
       <LuFlower className="absolute opacity-15 text-[100px] top-40 right-0 text-blue-900" />
       <div className=" mx-4 sm:grid sm:grid-cols-2 sm:gap-4">
-        <span className="">
+        <span className="p-5 about">
           <h2 className="pt-5 text-center text-lg font-bold text-blue-900">
             Set the Stage: Why We Exist
           </h2>
@@ -53,7 +53,7 @@ const AboutMe = () => {
             That’s where the journey of Juru Collection began.
           </p>
         </span>
-        <span className="">
+        <span className="p-5 about ">
           <h2 className="pt-5 text-center text-lg font-bold text-blue-900">
             Tackling the Obstacle: How It Started
           </h2>
@@ -76,7 +76,7 @@ const AboutMe = () => {
             we closed our storefront and went fully digital.
           </p>
         </span>
-        <span>
+        <span className="p-5 about">
           <h2 className="pt-5 text-center text-lg font-bold text-blue-900">
             Introducing the Solution: Our Approach
           </h2>
@@ -98,7 +98,7 @@ const AboutMe = () => {
             Africa.
           </p>
         </span>
-        <span className=" ">
+        <span className="p-5 about ">
           <h2 className="pt-5 text-center text-lg font-bold text-blue-900">
             The Bigger Picture: Our Mission & Future
           </h2>
@@ -124,7 +124,7 @@ const AboutMe = () => {
             </ul>
           </p>
         </span>
-        <span>
+        <span className="p-5 about">
           <h3 className="pt-5 text-center font-bold text-blue-900 text-lg">
             Our History (Timeline)
           </h3>
