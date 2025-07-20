@@ -1,30 +1,45 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const MyForm = () => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [textfield, setTextField] = useState("");
-
-  function handleNameChange(event) {
-    setFullName(event.target.value);
-  }
-
-  function handleEmailChange(event) {
-    setEmail(event.target.value);
-  }
-
-  function handleTextFieldChange(event) {
-    setTextField(event.target.value);
-  }
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = (event) => {
-    event.preventDefault(); // Prevent default form submission
-    console.log("Form submitted:", { fullName, email, textfield });
-    handleNameChange();
-    handleEmailChange();
-    handleTextFieldChange();
+    event.preventDefault();
+    setIsLoading(true); // Show loading spinner
 
-    // You can send this data to an API, perform validation
+    const templateParams = {
+      from_name: fullName,
+      from_email: email,
+      message: textfield,
+    };
+
+    emailjs
+      .send(
+        "service_ehbg355",
+        "template_ijhs625",
+        templateParams,
+        "HZxuOlpImSFwSaG7n"
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          alert("Message sent successfully!");
+          setIsLoading(false); // Stop loading
+        },
+        (err) => {
+          console.error("FAILED...", err);
+          alert("Failed to send message.");
+          setIsLoading(false); // Stop loading
+        }
+      );
+
+    setFullName("");
+    setEmail("");
+    setTextField("");
   };
 
   return (
@@ -35,8 +50,9 @@ const MyForm = () => {
         <input
           type="text"
           value={fullName}
-          onChange={handleNameChange}
+          onChange={(e) => setFullName(e.target.value)}
           className="inputStyle"
+          required
         />
       </label>
       <label>
@@ -44,8 +60,9 @@ const MyForm = () => {
         <input
           type="email"
           value={email}
-          onChange={handleEmailChange}
+          onChange={(e) => setEmail(e.target.value)}
           className="inputStyle"
+          required
         />
       </label>
       <label>
@@ -53,12 +70,19 @@ const MyForm = () => {
         <input
           type="text"
           value={textfield}
-          onChange={handleTextFieldChange}
+          onChange={(e) => setTextField(e.target.value)}
           className="inputStyle"
+          required
         />
       </label>
-      <button className="btnSubmit" type="submit">
-        Send Message
+      <button className="btnSubmit" type="submit" disabled={isLoading}>
+        {isLoading ? (
+          <div className="flex items-center gap-2 justify-center">
+            <span className="loader" /> Sending...
+          </div>
+        ) : (
+          "Send Message"
+        )}
       </button>
     </form>
   );
